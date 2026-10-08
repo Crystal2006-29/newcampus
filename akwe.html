@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acquaintance Event | ISUFST</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff5f9;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #f8c8dc, #f3a6c1);
+            color: white;
+            text-align: center;
+            padding-top: 35px;
+            box-shadow: 0 5px 20px rgba(232, 141, 171, 0.3);
+        }
+
+        .header-content h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .header-content p {
+            font-size: 16px;
+            margin: 3px 0;
+        }
+
+        /* NAVIGATION */
+        nav {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: white;
+            color: #e88dab;
+        }
+
+        /* MAIN */
+        main {
+            width: 90%;
+            max-width: 1150px;
+            margin: 40px auto;
+        }
+
+        /* SECTIONS */
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(232, 141, 171, 0.15);
+        }
+
+        section h2 {
+            text-align: center;
+            color: #df7f9e;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* INTRODUCTION */
+        .event-intro {
+            text-align: center;
+            border-top: 6px solid #f8c8dc;
+        }
+
+        .event-intro p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* EVENT DETAILS */
+        .details-card {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background: #fff5f9;
+            border-left: 6px solid #f8c8dc;
+            border-radius: 15px;
+        }
+
+        .details-card p {
+            background: white;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(232, 141, 171, 0.12);
+        }
+
+        .details-card strong {
+            color: #df7f9e;
+        }
+
+        /* PHOTO GALLERY */
+        .photo-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .photo-card {
+            background: white;
+            border: 2px solid #fde3ed;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(232, 141, 171, 0.18);
+            transition: 0.3s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(232, 141, 171, 0.3);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-card p {
+            text-align: center;
+            color: #df7f9e;
+            font-weight: bold;
+            padding: 14px;
+        }
+
+        /* VIDEO */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .video-card {
+            background: #fff5f9;
+            padding: 15px;
+            border: 2px solid #fde3ed;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(232, 141, 171, 0.18);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+            display: block;
+            background: #f8dce7;
+        }
+
+        .video-card h3 {
+            text-align: center;
+            color: #df7f9e;
+            margin-top: 12px;
+        }
+
+        /* BACK HOME */
+        .back-home {
+            text-align: center;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .back-home a {
+            display: inline-block;
+            background: linear-gradient(135deg, #f8c8dc, #e88dab);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .back-home a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 18px rgba(232, 141, 171, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #f8c8dc, #e88dab);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+
+            .photo-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .header-content h1 {
+                font-size: 25px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 23px;
+            }
+
+            .photo-container {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-card img {
+                height: 230px;
+            }
+
+            .video-card video {
+                height: 220px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="header-content">
+
+            <h1>🎉 ISUFST Acquaintance Event</h1>
+
+            <p>
+                Iloilo State University of Fisheries Science and Technology
+            </p>
+
+            <p>
+                San Enrique Campus
+            </p>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html">Leadership</a>
+                </li>
+
+                <li>
+                    <a href="akwe.html">
+                        Acquaintance Event
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section class="event-intro">
+
+            <h2>🎉 Acquaintance Event</h2>
+
+            <p>
+                Welcome to the ISUFST San Enrique Campus Acquaintance Event!
+                This event brings students, faculty, and staff together
+                to build friendship, teamwork, and memorable experiences.
+            </p>
+
+        </section>
+
+
+        <!-- EVENT DETAILS -->
+        <section class="event-details">
+
+            <h2>📅 Event Details</h2>
+
+            <div class="details-card">
+
+                <p>
+                    <strong>Event:</strong>
+                    Acquaintance Party
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    San Enrique Campus
+                </p>
+
+                <p>
+                    <strong>Participants:</strong>
+                    Students, Faculty and Staff
+                </p>
+
+                <p>
+                    <strong>Purpose:</strong>
+                    Building friendship and unity
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PHOTO GALLERY -->
+        <section class="gallery">
+
+            <h2>📸 Event Photo Gallery</h2>
+
+            <div class="photo-container">
+
+                <div class="photo-card">
+                    <img src="images/pic1.jpg"
+                         alt="Acquaintance Event Photo 1">
+                    <p>Drag Queen</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/pic2.jpg"
+                         alt="Acquaintance Event Photo 2">
+                    <p>Parade</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/pic3.jpg"
+                         alt="Acquaintance Event Photo 3">
+                    <p>Street Dance</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/pic4.jpg"
+                         alt="Acquaintance Event Photo 4">
+                    <p>Street Dance</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/pic5.jpg"
+                         alt="Acquaintance Event Photo 5">
+                    <p>Parade</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/pic7.jpg"
+                         alt="Acquaintance Event Photo 6">
+                    <p>Mr. & Ms UNITY</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO SECTION -->
+        <section class="video-section">
+
+            <h2>🎥 Event Videos</h2>
+
+            <div class="video-container">
+
+                <div class="video-card">
+
+                    <video controls>
+
+                        <source
+                            src="videos/vid1.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                    <h3>
+                        Acquaintance Event Highlights
+                    </h3>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <video controls>
+
+                        <source
+                            src="videos/vid2.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                    <h3>
+                        Event Activities
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK TO HOME -->
+        <section class="back-home">
+
+            <a href="index.html">
+                ← Back to Leadership Page
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Iloilo State University of Fisheries Science and Technology
+        </p>
+
+        <p>
+            College of Computer Studies
+        </p>
+
+        <p>
+            © 2026 ISUFST - San Enrique Campus
+        </p>
+
+    </footer>
+
+</body>
+</html>

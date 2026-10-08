@@ -1,0 +1,301 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7fb;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #f8c8dc, #f4a6c1);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 17px;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+nav {
+    background-color: #ffe4ef;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(210, 100, 140, 0.15);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* NAVIGATION BUTTONS */
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #f4a6c1;
+    padding: 10px 22px;
+    margin: 5px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+nav a:hover {
+    background-color: #e88aa8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(210, 100, 140, 0.25);
+}
+
+/* ACTIVE BUTTON */
+
+nav a.active {
+    background-color: #e88aa8;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    text-align: center;
+    color: #d66a91;
+    font-size: 28px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #f8c8dc;
+    padding-bottom: 10px;
+}
+
+section > h3 {
+    text-align: center;
+    color: #d66a91;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   OFFICIALS CONTAINER
+========================= */
+
+.officials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* =========================
+   OFFICIAL CARD
+========================= */
+
+.official-card {
+    background-color: white;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #f8c8dc;
+
+    box-shadow: 0 5px 15px rgba(210, 100, 140, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* CARD HOVER */
+
+.official-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(210, 100, 140, 0.2);
+}
+
+/* SELECTED CARD */
+
+.official-card.selected {
+    border-color: #f4a6c1;
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(244, 166, 193, 0.3);
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.official-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 5px solid #f8c8dc;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   NAMES
+========================= */
+
+.official-card h3 {
+    color: #d66a91;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.official-card p {
+    font-size: 15px;
+    color: #666;
+}
+
+.official-card strong {
+    color: #e88aa8;
+}
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+
+#backToTop {
+    display: none;
+
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #f4a6c1;
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(210, 100, 140, 0.25);
+
+    z-index: 2000;
+
+    transition: 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #d66a91;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #e88aa8;
+    color: white;
+    text-align: center;
+
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header-content h1 {
+        font-size: 28px;
+    }
+
+    .header-content p {
+        font-size: 15px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    /* MOBILE NAVIGATION */
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px auto;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* MOBILE CARDS */
+
+    .official-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .official-card img {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* MOBILE BACK TO TOP */
+
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+```
+
+This gives you a **soft baby-pink, clean, and cute look** instead of the stronger hot-pink colors. 🌷
